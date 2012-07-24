@@ -1,0 +1,34 @@
+/* 
+Edit this file 
+*/
+
+.api {
+	color:#00FF00;
+}
+.static {
+	color:#00AA00;
+}
+.transcode {
+	color: #912CEE;
+}
+.oauth {
+	color: #0099FF;
+}
+.api a {
+	color: #00FF00;
+}
+.static a {
+	color: #00AA00;
+}
+
+.transcode a {
+	color: #912CEE;
+}
+
+.oauth a {
+	color: #0099FF;
+}
+
+.hidden {
+	display: none;
+}

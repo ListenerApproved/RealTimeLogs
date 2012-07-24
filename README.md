@@ -8,8 +8,9 @@ Real Time Logs is a node.js app designed for reading logs in real time via ssh a
 3. Edit or create '/etc/rtlogs/config.js' and add servers and groups.
 4. node app.js 
 
-sample config.js
+Don't forget to make sure the account you run the app as has correct ssh keys setup. 
 
+sample config.js
 ```javascript
 exports.servers = [
 	{
@@ -39,5 +40,11 @@ exports.servers = [
 	},
 ];
 ```
+### Log syntax
+Right now there is a pretty definitive log format of 'date space server space ip space message' but this will hopefully change in the future.
+
 ### Screenshot
 ![Screen Shot](http://i.imgur.com/9lh8c.png)
+
+### Special Credit
+Graphs by [cubism](https://github.com/square/cubism/)

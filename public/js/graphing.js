@@ -28,7 +28,7 @@ jQuery(function($) {
   var context = cubism.context()
       .serverDelay(0)
       .clientDelay(0)
-      .step(1e4)
+      .step(1e3)
       .size(autoWidth);
 
   var foo = graphData("foo");

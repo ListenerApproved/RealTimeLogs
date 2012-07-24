@@ -22,13 +22,7 @@ td.msg {
 	word-break: break-all;
 }
 
-td:nth-child(1) {
-	white-space: nowrap;
-}
-td:nth-child(2) {
-	white-space: nowrap;
-}
-td:nth-child(3) {
+td:nth-child(1), td:nth-child(2), td:nth-child(3) {
 	white-space: nowrap;
 }
 
@@ -169,39 +163,4 @@ td:nth-child(3) {
 
 input[type="text"] {
 	padding:14px 5px;
-}
-
-
-/* set css for groups of servers, YAY */
-
-.api {
-	color:#00FF00;
-}
-.static {
-	color:#00AA00;
-}
-.transcode {
-	color: #912CEE;
-}
-.oauth {
-	color: #0099FF;
-}
-.api a {
-	color: #00FF00;
-}
-
-.static a {
-	color: #00AA00;
-}
-
-.transcode a {
-	color: #912CEE;
-}
-
-.oauth a {
-	color: #0099FF;
-}
-
-.hidden {
-	display: none;
 }

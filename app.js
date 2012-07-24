@@ -7,7 +7,6 @@ var http = require('http')
   , lineCount = 1
   , buffer = []
   , startTime = new Date(Date.now());
-  console.log(startTime)
 
 ///// Config file stuff
 var config = require('/etc/rtlogs/config.js')
@@ -36,13 +35,10 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
- // var time = new Date()
-  //time.setTime(time.getTime() - startTime.getTime()) ;
   var now = new Date()
   var one_day=1000*60*60*24
   var packagedTime = new Date()
   packagedTime.setTime(now.getTime()-startTime.getTime());
-  //console.log(startTime.getTime() + " - " + now.getTime() + " = " + packagedTime.getTime())
   socket.emit('system', { text: 'Connection Accepted', server: 'socket.io', group: 'socket.io' });
   socket.emit('system', { servers: config.servers, time: packagedTime.getTime()} )
   socket.emit('buffer', { buffer: buffer })
