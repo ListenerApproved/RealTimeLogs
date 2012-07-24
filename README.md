@@ -32,7 +32,7 @@ exports.servers = [
 	{
 	group: 'auth',
 	server: 'auth-001',
-	log: '/var/log/Software/la_oauth.log'
+	log: '/var/log/Software/auth.log'
 	},
 ];
 ```
