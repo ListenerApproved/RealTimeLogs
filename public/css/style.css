@@ -1,0 +1,207 @@
+html,
+body {
+    width:100%; /* Needed to avoid a redrawing bug in Firefox when resizing windows */
+    height:100%;
+    background-color:#000000;
+    color:#FFFFFF;
+    font: 500 14px/1.4em "Ubuntu", sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+a { text-decoration: none;}
+
+td {
+	padding: 3px 5px;
+	border-bottom: 1px dashed #aaa;
+	width:auto;
+}
+
+td.msg {
+	word-break: break-all;
+}
+
+td:nth-child(1) {
+	white-space: nowrap;
+}
+td:nth-child(2) {
+	white-space: nowrap;
+}
+td:nth-child(3) {
+	white-space: nowrap;
+}
+
+.subtext {
+	font: 500 12px/1.4em "Ubuntu", sans-serif;
+}
+
+#graphBar { min-height: 40px; padding: 0; border-right: 1px solid #666;}
+.graphBarWrapper, .topbarWrapper { float: left; height: 40px; padding: 0px !important;}
+.topbarWrapper { float: right;}
+#graphBar .value {display: none;}
+
+#master {
+	width: 100%;
+	overflow-x: none;
+	overflow-y: auto;
+}
+
+#datagrid {
+	width: 100%;
+}
+
+.lineNum {
+	color: #FFFFFF;
+}
+
+.topbar {
+	width: 100%;
+	height: 40px;
+	-webkit-box-shadow: 0 0 0.5em #333;
+	-moz-box-shadow: 0 0 0.5em #333;
+	-o-box-shadow: 0 0 0.5em #33;
+	box-shadow: 0 0 0.5em #333;
+}
+
+.topbarWrapper > div {
+	padding: 10px;
+	text-align: center;
+	font-size:18px;
+	border-right: 1px solid #666;
+	text-shadow: black 0 0.1em 0.2em;
+	-ms-filter: "progidXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=0.2em)";
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	text-transform: uppercase;
+	color: #CCC;
+}
+
+.settings:hover {
+	cursor: pointer;
+	color: #FFF;
+	-webkit-box-shadow: -1px 0 0.3em #111 inset;
+	-moz-box-shadow: -1px 0 0.3em #111 inset;
+	-o-box-shadow: -1px 0 0.3em #111 inset;
+	box-shadow: -1px 0 0.3em #111 inset;
+}
+
+
+.topbarWrapper > .settings {
+	float: right;
+	border: 0;
+}
+
+.topbarWrapper > .label {
+	float: right;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+	-webkit-box-shadow: 0 0 0.5em #333;
+	-moz-box-shadow: 0 0 0.5em #333;
+	-o-box-shadow: 0 0 0.5em #33;
+	box-shadow: 0 0 0.5em #333;
+}
+
+.footer > div {
+	box-align: stretch;
+	-moz-box-align: stretch;
+	-webkit-box-align: stretch;
+	box-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	-webkit-box-shadow: 0 0 0.1em #333 inset;
+	-moz-box-shadow: 0 0 0.1em #333333 inset;
+	-o-box-shadow: 0 0 0.1em #333333 inset;
+	box-shadow: 0 0 0.1em #333 inset;
+	background: #333;	
+	padding: 10px 0;
+	text-align: center;
+	font-size:18px;
+	border-right: 1px solid #666;
+	background-image: -moz-linear-gradient(top, #333, #111);
+	background-image: -ms-linear-gradient(top, #333, #111);
+	background-image: -o-linear-gradient(top, #333, #111);
+	background-image: -webkit-linear-gradient(top, #333, #111);
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#333), to(#111));
+	background-image: linear-gradient(top, #333, #111);
+	text-shadow: black 0 0.1em 0.2em;
+	-ms-filter: "progidXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=0.2em)";
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	text-transform: uppercase;
+	color: #CCC;
+}
+
+.footer > div:hover {
+	cursor: pointer;
+	color: #FFF;
+	-webkit-box-shadow: -1px 0 0.3em #111 inset;
+	-moz-box-shadow: -1px 0 0.3em #111 inset;
+	-o-box-shadow: -1px 0 0.3em #111 inset;
+	box-shadow: -1px 0 0.3em #111 inset;
+}
+.footer > div:last-child {
+	border-right: none;
+
+}
+
+/* modal */
+#settingsModal {
+	color: #000000;
+}
+
+#settingsModal a {
+	text-decoration: none;
+}
+
+input[type="text"] {
+	padding:14px 5px;
+}
+
+
+/* set css for groups of servers, YAY */
+
+.api {
+	color:#00FF00;
+}
+.static {
+	color:#00AA00;
+}
+.transcode {
+	color: #912CEE;
+}
+.oauth {
+	color: #0099FF;
+}
+.api a {
+	color: #00FF00;
+}
+
+.static a {
+	color: #00AA00;
+}
+
+.transcode a {
+	color: #912CEE;
+}
+
+.oauth a {
+	color: #0099FF;
+}
+
+.hidden {
+	display: none;
+}

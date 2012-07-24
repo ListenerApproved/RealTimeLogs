@@ -1,0 +1,75 @@
+<html>
+<head> <!-- Yes please --> 
+<title>RTLogger</title>
+<link rel="stylesheet" type="text/css" href="http://listenerapproved.com/css/bootstrap.2.0.3.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/underscore-min1.3.3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/core.js"></script>
+<script src="js/d3.v2.js"></script>
+<script src="js/cubism.v1.js"></script>
+<script src="js/graphing.js"></script>
+</head>
+<body>
+<div class="topbar">
+	<div class="graphBarWrapper">
+		<div id="graphBar"></div>
+	</div>
+	<div class="topbarWrapper">
+		<div name="settings" class="settings" data-toggle="modal" href="#settingsModal"><i class="icon-cog icon-white"></i></div>
+		<div class="label elapsed" rel="tooltip" title="Elapsed time" ><span class="subtext">elapsed</span></div>
+		<div class="label mps" rel="tooltip" title="Messages per minute" >0 <span class="subtext">mpm</span></div>
+		<div class="label numMessages" rel="tooltip" title="total messages" >0 <span class="subtext">messages</span></div>
+		<div class="label serverCount" rel="tooltip" title="number of servers" ><span class="subtext">servers</span></div>
+	</div>
+</div>
+<div id="master">
+	<table id="datagrid" class="">
+	</table>
+</div>
+<div class="footer">
+	<div name="all" class="serversGroup">ALL</div>
+</div>
+
+<!-- modal for settings -->
+<div class="modal hide" id="settingsModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ><i class="icon-white icon-remove"> </i></button>
+    <h3>Settings</h3>
+  </div>
+  <div class="modal-body">
+
+  	<form class="form-horizontal well">
+	  <fieldset>
+	    <div class="control-group">
+	      <label class="control-label" for="hide-ip">Hide IP</label>
+	      <div class="controls">
+	         <input name="hide-ip" id="hide-ip" type="text" class="input-large ip-input" placeholder="8.8.8.8, 69.179.183.239">
+	      </div>
+	  	</div>
+	    <div class="control-group">
+	      <label class="control-label" for="alertRegex">Alert</label>
+	      <div class="controls">
+	      	<input name="hide-ip" id="alertRegex" type="text" class="input-large" placeholder="regular expression">
+	      </div>
+	    </div>
+	  </fieldset>
+	</form>
+  </div>
+  <div class="modal-footer">
+    <!--  <a href="#" class="btn" data-dismiss="modal">Close</a> -->
+    <a href="#" class="btn btn-primary" id="save" data-dismiss="modal" >Save changes</a>
+    <script>
+    	
+    	$("#save").on("click", function(){
+    		console.log("saved " + $('#hide-ip').val())
+    		localStorage.setItem("hideip", $('#hide-ip').val() )
+    	})
+    </script>
+  </div>
+</div>
+
+</body>
+</html>
