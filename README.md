@@ -36,5 +36,5 @@ exports.servers = [
 	},
 ];
 ```
-### Screen Shots
+### Screenshot
 ![Screen Shot](http://i.imgur.com/9lh8c.png)
