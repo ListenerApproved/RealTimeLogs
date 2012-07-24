@@ -2,8 +2,11 @@
 
 Real Time Logs is a node.js app designed for reading logs in real time via ssh and serving them in real time to clients via web sockets.
 
-## Set Up 
-Edit or create '/etc/rtlogs/config.js' and add servers and groups.
+## Installation and Setup
+1. Get clone and cd into directory of your choice
+2. npm install
+3. Edit or create '/etc/rtlogs/config.js' and add servers and groups.
+4. node app.js 
 
 sample config.js
 

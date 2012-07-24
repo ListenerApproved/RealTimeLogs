@@ -24,11 +24,11 @@ jQuery(function($) {
 
   var topbarSize = $(".topbarWrapper").width()
   var autoWidth = Math.round(window.innerWidth - topbarSize - 200)
-  
+
   var context = cubism.context()
       .serverDelay(0)
       .clientDelay(0)
-      .step(1e3)
+      .step(1e4)
       .size(autoWidth);
 
   var foo = graphData("foo");
