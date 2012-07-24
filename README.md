@@ -1,7 +1,7 @@
 # Real Time Logs 
 
 RTLogs is a node.js app designed for reading logs in real time via ssh and serving them in real time to clients via web sockets.
-
+[Screen Shot](http://i.imgur.com/9lh8c)
 ## Set Up 
 Edit or create '/etc/rtlogs/config.js' and add servers and groups.
 
