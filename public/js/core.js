@@ -53,7 +53,7 @@ jQuery(function($) {
 	}
 
 	function logLine(group, lineCount, server, date, ip, type, message){
-		var ipArray = $('#hide-ip').val().split(",")
+		var ipArray = $('#hide-ip').val().split(",");
 
 		if ($.inArray(ip, ipArray) == -1) {
 			var msg = urlize(message.replace(date, '').replace(ip, '').replace(/-\s(?!:-)/g, ''));
