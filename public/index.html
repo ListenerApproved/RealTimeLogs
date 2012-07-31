@@ -1,5 +1,5 @@
 <html>
-<head> <!-- Yes please --> 
+<head> <!-- Yes please -->
 <title>Real Time Logs</title>
 <link rel="stylesheet" type="text/css" href="http://listenerapproved.com/css/bootstrap.2.0.3.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -26,50 +26,44 @@
 		<div class="label serverCount" rel="tooltip" title="number of servers" ><span class="subtext">servers</span></div>
 	</div>
 </div>
-<div id="master">
+<div id="master" class="all">
 	<table id="datagrid" class="">
 	</table>
 </div>
 <div class="footer">
-	<div name="all" class="serversGroup">ALL</div>
+	<div data-group="all" class="serversGroup">ALL</div>
 </div>
 
 <!-- modal for settings -->
 <div class="modal hide" id="settingsModal">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" ><i class="icon-white icon-remove"> </i></button>
-    <h3>Settings</h3>
-  </div>
-  <div class="modal-body">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" ><i class="icon-white icon-remove"> </i></button>
+		<h3>Settings</h3>
+	</div>
 
-  	<form class="form-horizontal well">
-	  <fieldset>
-	    <div class="control-group">
-	      <label class="control-label" for="hide-ip">Hide IP</label>
-	      <div class="controls">
-	         <input name="hide-ip" id="hide-ip" type="text" class="input-large ip-input" placeholder="8.8.8.8, 69.179.183.239">
-	      </div>
-	  	</div>
-	    <div class="control-group">
-	      <label class="control-label" for="alertRegex">Alert</label>
-	      <div class="controls">
-	      	<input name="hide-ip" id="alertRegex" type="text" class="input-large" placeholder="regular expression">
-	      </div>
-	    </div>
-	  </fieldset>
+	<div class="modal-body">
+		<form class="form-horizontal well">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label" for="hide-ip">Hide IP</label>
+				<div class="controls">
+					 <input name="hide-ip" id="hide-ip" type="text" class="input-large ip-input" placeholder="8.8.8.8, 69.179.183.239">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="alertRegex">Alert</label>
+				<div class="controls">
+					<input name="hide-ip" id="alertRegex" type="text" class="input-large" placeholder="regular expression">
+				</div>
+			</div>
+		</fieldset>
 	</form>
-  </div>
-  <div class="modal-footer">
-    <!--  <a href="#" class="btn" data-dismiss="modal">Close</a> -->
-    <a href="#" class="btn btn-primary" id="save" data-dismiss="modal" >Save changes</a>
-    <script>
-    	
-    	$("#save").on("click", function(){
-    		console.log("saved " + $('#hide-ip').val())
-    		localStorage.setItem("hideip", $('#hide-ip').val() )
-    	})
-    </script>
-  </div>
+	</div>
+
+	<div class="modal-footer">
+		<!--  <a href="#" class="btn" data-dismiss="modal">Close</a> -->
+		<a href="#" class="btn btn-primary" id="save" data-dismiss="modal" >Save changes</a>
+	</div>
 </div>
 
 </body>

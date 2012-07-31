@@ -41,6 +41,14 @@ td:nth-child(1), td:nth-child(2), td:nth-child(3) {
 	overflow-y: auto;
 }
 
+#master tr {
+	display: none;
+}
+
+#master.all tr {
+	display: table-row;
+}
+
 #datagrid {
 	width: 100%;
 }
@@ -118,7 +126,7 @@ td:nth-child(1), td:nth-child(2), td:nth-child(3) {
 	-moz-box-shadow: 0 0 0.1em #333333 inset;
 	-o-box-shadow: 0 0 0.1em #333333 inset;
 	box-shadow: 0 0 0.1em #333 inset;
-	background: #333;	
+	background: #333;
 	padding: 10px 0;
 	text-align: center;
 	font-size:18px;
