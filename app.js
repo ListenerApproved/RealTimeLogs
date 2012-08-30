@@ -71,14 +71,10 @@ io.sockets.on('connection', function(socket) {
 });
 
 ///// Actual Streamer
+function setupFileWatcher(f, server, group, file) {
+	f.stdout.setEncoding('utf8');
 
-
-function streamLog(server, group, file) {
-	fileWatcher = spawn('ssh', [server, 'tail', '-f', '-n', '0', file]);
-
-	fileWatcher.stdout.setEncoding('utf8');
-
-	fileWatcher.stdout.on('data', function(data) {
+	f.stdout.on('data', function(data) {
 		var lines = ("" + data).split('\n');
 
 		lines.forEach(function(line) {
@@ -89,17 +85,26 @@ function streamLog(server, group, file) {
 			io.sockets.emit('log', logEntry);
 			buffer.push(logEntry);
 
-			if (buffer.length > 100) {
-				// use copy-on-write.
-				// Shift reindexes the array, slice(-100) COWs the last 100 elements
-				buffer = buffer.slice(-100);
-			}
+			if (buffer.length > 100) buffer = buffer.slice(-100);
 
 			lineCount++;
 		});
 	});
 
-	fileWatcher.on('exit', function(code) {
-		console.log("ERROR: file watcher died " + code);
+	f.stderr.setEncoding('utf8');
+
+	f.stderr.on('data', function(data) {
+		console.error('FileWatcher [ %s ] [ %s ] ERROR: %s', server, group, data);
 	});
+
+	f.on('exit', function(code) {
+		f = null;
+		console.log("ERROR: file watcher died " + code);
+		streamLog(server, group, file);
+	});
+};
+
+function streamLog(server, group, file) {
+	var fileWatcher = spawn('ssh', [server, 'tail', '-f', '-n', '0', file]);
+	setupFileWatcher(fileWatcher, server, group, file);
 }
