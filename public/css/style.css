@@ -147,17 +147,23 @@ td:nth-child(1), td:nth-child(2), td:nth-child(3) {
 	color: #CCC;
 }
 
-.footer > div:hover {
+.footer > div:hover, .footer > div.active {
 	cursor: pointer;
 	color: #FFF;
 	-webkit-box-shadow: -1px 0 0.3em #111 inset;
 	-moz-box-shadow: -1px 0 0.3em #111 inset;
 	-o-box-shadow: -1px 0 0.3em #111 inset;
 	box-shadow: -1px 0 0.3em #111 inset;
+	background-image: -moz-linear-gradient(top, #444, #222);
+	background-image: -ms-linear-gradient(top, #444, #222);
+	background-image: -o-linear-gradient(top, #444, #222);
+	background-image: -webkit-linear-gradient(top, #444, #222);
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#444), to(#222));
+	background-image: linear-gradient(top, #444, #222);
 }
+
 .footer > div:last-child {
 	border-right: none;
-
 }
 
 /* modal */
