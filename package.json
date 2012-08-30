@@ -1,7 +1,7 @@
 {
   "name": "RealTimeLogs",
   "description": "Real Time Logs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Russell Perkins <dsw.ninjaboy@gmail.com>",
   "dependencies": {
 		"socket.io": "0.9.6",
