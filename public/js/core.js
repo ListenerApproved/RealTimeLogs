@@ -142,6 +142,9 @@ jQuery(function($) {
 
 
 	$('.footer').on('click', '.serversGroup', function() {
+		$('.footer').find('.active').removeClass('active');
+		$(this).addClass('active');
+
 		$("#master").removeClass().addClass($(this).data('group') || 'all');
 	});
 
